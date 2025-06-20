@@ -20,11 +20,11 @@ app.use(
     session({
         resave: false,
         saveUninitialized: false,
-        cookieL {
-            secure:
+        cookie: {
+            secure: flase
         }
     })
-)
+))
 
 // Export the app instead of listening here
 module.exports = app;

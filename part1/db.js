@@ -1,6 +1,6 @@
 const mysql = require('mysql2/promise');
 
-const db = mysql.createPool({
+const pool = mysql.createPool({
   host: 'localhost',
   user: 'db_user',
   password: 'pass123',
@@ -9,4 +9,4 @@ const db = mysql.createPool({
   connectionLimit: 10
 });
 
-module.exports = db;
+module.exports = pool;

@@ -123,7 +123,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
             request_time,
             duration_minutes,
             location,
-            
+            (SELECT username FROM Users WHERE user_id = owner_id)
             FROM WalkRequests WHERE status = 'open'
             `);
         res.json(rows);

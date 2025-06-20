@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
 
 router.get('/dogs', async (req, res) => {
   const [rows] = await db.query(`
-    SELECT name FROM Dogs
+    SELECT name FROM Dogs WHERE owner_id = 
   `);
 });
 

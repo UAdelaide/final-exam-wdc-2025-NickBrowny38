@@ -94,8 +94,6 @@
         const error = ref('');
         const dogs = ref([]);
 
-        const dropdown = document.getElementById("dogs-dropdown");
-
         async function loadWalks() {
           try {
             const res = await fetch('/api/walks');

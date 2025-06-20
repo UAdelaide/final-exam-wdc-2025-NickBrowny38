@@ -19,7 +19,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 async function insertTestData() {
-    
+    try {
+        
+    }
 }
 
 

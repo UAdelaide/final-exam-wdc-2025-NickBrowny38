@@ -130,7 +130,7 @@
                 "SELECT name FROM Dogs WHERE owner_id = user_id"
               );
 
-              for (var dog in rows[0]) {
+              for (var dog in rows) {
                 var new_dog = document.createElement('option');
                 new_dog.value =
               }

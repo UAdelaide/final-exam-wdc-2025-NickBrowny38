@@ -61,8 +61,8 @@ async function insertTestData() {
             `);
         }
 
-                const [user_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
-        if (user_rows[0].count === 0) {
+        const [walk_req_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
+        if (walk_req_rows[0].count === 0) {
         // Insert test walk requests
         await connection.query(`
             INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)

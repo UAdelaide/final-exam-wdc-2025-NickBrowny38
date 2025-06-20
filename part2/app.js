@@ -30,6 +30,8 @@ const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 
+
+app.use('/', indexRouter);
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 

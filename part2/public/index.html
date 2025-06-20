@@ -56,13 +56,6 @@
         const dogs = ref([]);
         const error = ref('');
 
-        data() {
-          return {
-            dogImage: '',
-            message: 'Welcome to the Dog Walking Service!'
-          }
-        }
-
         async function loadDogs() {
           try {
             const res = await fetch('/api/dogs');
@@ -89,7 +82,9 @@
 
         return {
           dogs,
-          error
+          error,
+          dogImage: '',
+          message: 'Welcome to the Dog Walking Service!'
         };
       }
     }).mount('#app');

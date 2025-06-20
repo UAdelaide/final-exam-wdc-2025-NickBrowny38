@@ -55,7 +55,7 @@
                     }
                 },
                 nextInfo() {
-                    this.index += 1;
+                    this.index = (this.index + 1) % this.;
                     return this.dogInfo[this.index];
                 }
             },

@@ -68,7 +68,7 @@ app.use('/users', usersRouter);
                 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
                 VALUES
                 ((SELECT dog_id FROM Dogs WHERE name = 'Max'),
-                '2025-06-10 08:00:00',
+                '2025-06-10 08:00:00' ,
                 30,
                 'Parklands',
                 'open'),
@@ -103,7 +103,7 @@ app.use('/users', usersRouter);
 app.get('/api/dogs', async (req, res) => {
     try {
         const [rows] = await db.query(`
-            SELECT name,
+            SELECT name AS dog_name,
             size,
             (SELECT username FROM Users WHERE user_id = owner_id)
             FROM Dogs

@@ -14,7 +14,16 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            secure: false
+        }
+    })
+);
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');

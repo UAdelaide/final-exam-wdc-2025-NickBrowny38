@@ -45,7 +45,9 @@ router.post('/login', async (req, res) => {
       res.send(req.session.user_id);
     } else {
       res.sendStatus(401);
-    } else {}
+    }
+  } else {
+    res.sendStatus(401);
   }
 });
 

@@ -8,8 +8,9 @@
 
 <body>
     <div id="dotd-div">
-    <h1>Dog of the day</h1>
-    <img src="dogimage" alt="failed to get DOTD">
+        <h1>Dog of the day</h1>
+        <img src="dogimage" alt="failed to get DOTD">
+    </div>
 
     <script>
         const { createApp } = Vue;
@@ -33,7 +34,7 @@
             mounted() {
                 this.getDog();
             }
-        }).mount('#app');
+        }).mount('#dotd-div');
     </script>
 </body>
 </html>

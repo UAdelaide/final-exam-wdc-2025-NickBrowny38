@@ -42,7 +42,7 @@ app.get('/api/dogs', async (req, res) => {
             SELECT dog_id,
             name,
             size,
-            (SELECT username FROM Users WHERE user_id = owner_id) AS owner_username
+            owner_id
             FROM Dogs
         `);
         res.json(rows);

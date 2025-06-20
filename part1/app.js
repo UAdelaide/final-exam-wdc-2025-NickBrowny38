@@ -32,7 +32,7 @@ async function insertTestData() {
                 ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
                 ('carol123', 'carol@example.com', 'hashed789', 'owner'),
                 ('angelawalker', 'angela@example.com', 'hashed000', 'walker'),
-                ('kim123', 'kim@example.com', 'hashed999', 'owner');
+                ('kim123', 'kim@example.com', 'hashed999', 'owner')
             `);
         }
 
@@ -57,7 +57,7 @@ async function insertTestData() {
                 'small'),
                 ((SELECT user_id FROM Users WHERE username = 'carol123'),
                 'Archie',
-                'medium');
+                'medium')
             `);
         }
 
@@ -91,7 +91,7 @@ async function insertTestData() {
                 '2025-06-11 11:15:00',
                 60,
                 'Eba Anchorage',
-                'completed');
+                'completed')
             `);
         }
     } catch (err) {
@@ -102,7 +102,7 @@ async function insertTestData() {
 // Route to return Dogs
 app.get('/api/dogs', async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT * FROM Dogs;')
+        const [rows] = await db.query('SELECT * FROM Dogs');
     }
 })
 

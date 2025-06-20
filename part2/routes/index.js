@@ -50,4 +50,23 @@ router.post('/logout', function(req, res, next) {
   res.redirect('/index.html');
 });
 
+router.get('/api/dogs', async (req, res) => {
+  const ownerId = req.session.user?.user_id;
+
+  if (!ownerId || req.session.user.role !== 'owner') {
+    return res.status(403).json({ error: 'Not authorized' });
+  }
+
+  try {
+    const [rows] = await db.query(
+      'SELECT name FROM Dogs WHERE owner_id = ?',
+      [ownerId]
+    );
+    res.json(rows);
+  } catch (err) {
+    console.error('Failed to fetch dogs:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 module.exports = router;

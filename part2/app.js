@@ -28,7 +28,7 @@ app.use(
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
-const indexRoutes = require('./routes/index')
+const indexRouter = require('./routes/indexRouter');
 
 
 app.use('/', indexRouter);

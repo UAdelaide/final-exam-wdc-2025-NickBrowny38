@@ -103,7 +103,9 @@ async function insertTestData() {
 app.get('/api/dogs', async (req, res) => {
     try {
         const [rows] = await db.query(`
-            SELECT name, size, (SELECT username FROM Users WHERE user_id = owner_id) FROM Dogs
+            SELECT name,
+            size,
+            (SELECT username FROM Users WHERE user_id = owner_id) FROM Dogs
         `);
         res.json(rows);
     } catch (err) {

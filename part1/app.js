@@ -20,7 +20,7 @@ app.use('/users', usersRouter);
 
 (async () => {
     try {
-        const connection = await db.createConnection();
+        const connection = await db.getConnection();
 
         const [user_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
         if (user_rows[0].count === 0) {

@@ -1,7 +1,9 @@
 var posts = [];
 var search = null;
 
-document.addEventListener
+document.addEventListener('DOMContentLoaded', () => {
+    
+});
 
 /*
  * Hides the main part of the page to show the Ask a Question section

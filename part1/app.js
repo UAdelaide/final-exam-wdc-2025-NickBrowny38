@@ -144,7 +144,7 @@ app.get('/api/walkers/summary', async (req, res) => {
             AVG(wrate.rating AS avg_ratings),
             COUNT(DISTINCT wreq.request_id) AS completed_walks
             FROM Users u
-            LEFT JOIN WalkRequests wreq
+            LEFT JOIN WalkRequests wreq ON u.user_id = wreq.
             FROM WalkRequests WHERE status = 'open'
 
         `);

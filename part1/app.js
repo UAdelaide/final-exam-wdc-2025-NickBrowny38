@@ -105,7 +105,7 @@ app.get('/api/dogs', async (req, res) => {
         const [rows] = await db.query(`
             SELECT name AS dog_name,
             size AS size,
-            (SELECT username FROM Users WHERE user_id = owner_id)
+            (SELECT username FROM Users WHERE user_id = owner_id) AS owner_username
             FROM Dogs
         `);
         res.json(rows);

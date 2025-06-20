@@ -128,7 +128,7 @@
 
         async function loadDogs() {
             try {
-              const response = await fetch(`/api/dogs?owner_id=${owner_id}`);
+              const response = await fetch('/api/udrtd');
               const rows = await response.json();
 
               for (const dog of rows) {

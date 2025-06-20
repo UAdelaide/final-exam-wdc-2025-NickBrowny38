@@ -137,7 +137,7 @@
                 credentials: 'include'
               });
 
-              const rows = await res.json();
+              if (!res.ok)
 
               for (const dog of rows) {
                 var new_dog = document.createElement('option');

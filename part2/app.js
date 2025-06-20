@@ -24,7 +24,7 @@ app.use(
             secure: flase
         }
     })
-))
+);
 
 // Export the app instead of listening here
 module.exports = app;

@@ -137,7 +137,7 @@
                 const new_dog = document.createElement('option');
                 new_dog.value = dog.name;
                 new_dog.textContent = dog.name;
-                dropdown.appendChild(new_dog);
+                this.dropdown.appendChild(new_dog);
               }
             } catch (err) {
               console.error('Finding dogs failed:',err);

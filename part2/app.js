@@ -18,7 +18,11 @@ app.use('/api/users', userRoutes);
 
 app.use(
     session({
-        resave: false
+        resave: false,
+        saveUninitialized: false,
+        cookieL {
+            
+        }
     })
 )
 

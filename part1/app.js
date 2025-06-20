@@ -101,7 +101,9 @@ async function insertTestData() {
 
 // Route to return Dogs
 app.get('/api/dogs', async (req, res) => {
-    try
+    try {
+        const [] = await
+    }
 })
 
 

@@ -131,9 +131,10 @@
               const response = await fetch('/api/dogs');
               const rows = await response.json();
 
-              for (var dog_name in rows) {
-                var new_dog = document.createElement('option');
-                new_dog.value = dog_name;
+              for (const dog of rows) {
+                const new_dog = document.createElement('option');
+                new_dog.value = dog.name;
+                new_dog.textContent = dog.name;
                 dropdown.appendChild(new_dog);
               }
             } catch (err) {

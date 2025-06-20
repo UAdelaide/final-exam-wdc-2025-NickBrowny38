@@ -42,7 +42,7 @@
                     dogImage: '',
                     dogInfo: ["alex", "owner is: Dr. Brown", "medium"],
                     index: 0,
-                    current_info
+                    current_info: 
                 };
             },
             methods: {
@@ -57,12 +57,11 @@
                 },
                 nextInfo() {
                     this.index = (this.index + 1) % this.dogInfo.length;
-                    this. this.dogInfo[this.index];
+                    this.current_info = this.dogInfo[this.index];
                 }
             },
             mounted() {
                 this.getDog();
-                this.nextInfo();
             }
         }).mount('#dotd-div');
     </script>

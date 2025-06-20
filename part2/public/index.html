@@ -29,27 +29,44 @@
       </form>
     </div>
 
-    <h2>All Registered Dogs</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Dog ID</th>
-          <th>Name</th>
-          <th>Size</th>
-          <th>Owner ID</th>
-          <th>Photo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="dog in dogs" :key="dog.dog_id">
-          <td>{{ dog.dog_id }}</td>
-          <td>{{ dog.name }}</td>
-          <td>{{ dog.size }}</td>
-          <td>{{ dog.owner_id }}</td>
-          <td><img :src="dogImages[dog.dog_id]" alt="Dog Image"></td>
-        </tr>
-      </tbody>
-    </table>
+  <script>
+    const { createApp, ref, onMounted } = Vue;
+    createApp({
+      setup() {
+        const dogs = ref([]);
+        const error = ref('');
+        const dogImages = ref({});
+
+        async function loadDogs() {
+          try {
+            const res = await fetch('/api/dogs');
+            if (!res.ok) throw new Error('Failed to fetch dogs');
+            const dogList = await res.json();
+            dogs.value = dogList;
+
+            for (const dog of dogList) {
+              const imageRes = await fetch('https://dog.ceo/api/breeds/image/random');
+              const imageData = await imageRes.json();
+              dogImages.value[dog.dog_id] = imageData.message;
+            }
+          } catch (err) {
+              error.value = err.message;
+          }
+        }
+
+        onMounted(() => {
+          loadDogs();
+        });
+
+        return {
+          dogs,
+          error,
+          dogImages,
+          message: 'Welcome to the Dog Walking Service!'
+        };
+      }
+    }).mount('#app');
+  </script>
   </div>
 
 

@@ -21,6 +21,8 @@ app.use('/users', usersRouter);
 async function insertTestData() {
     try {
         const connection = await db.createConnection();
+
+        await connection.query()
     }
 }
 

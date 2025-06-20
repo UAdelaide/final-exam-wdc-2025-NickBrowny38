@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 const session = require('express-session');
-const db = require('models/db');
 const app = express();
 
 //app.use(logger('dev'));

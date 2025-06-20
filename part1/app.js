@@ -85,7 +85,7 @@ async function insertTestData() {
             'completed');
         `);
     } catch (err) {
-        console.error('Error setting up database');
+        console.error('Error setting up database', err);
     }
 }
 

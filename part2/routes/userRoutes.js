@@ -41,8 +41,7 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const connection = await db.getConnection();
-    const ok = await db.query("SELECT * FROM Users WHERE username = ? AND password = ?")
+    const [rows] = await db.query("SELECT * FROM Users WHERE username = ? AND password = ?")
   }
 
   if (req.body.user_id in Users){

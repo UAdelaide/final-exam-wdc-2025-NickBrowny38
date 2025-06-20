@@ -82,7 +82,7 @@
           try {
             const res = await fetch('/api/user/me');
             if (!res.ok) throw new Error(result.error || 'Application failed');
-            user.value = res.user_id;
+            return res.user_id;
           } catch (err) {
             error.value = err.message;
             message.value = '';

@@ -40,7 +40,11 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
 
   if (req.body.user_id in Users){
-    
+
+    try {
+      const connection = await db.getConnection
+    }
+
     if(){
       req.session.user_id = req.body.user_id;
       res.send(req.session.user_id);

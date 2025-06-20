@@ -46,7 +46,7 @@
           <td>{{ dog.name }}</td>
           <td>{{ dog.size }}</td>
           <td>{{ dog.owner_id }}</td>
-          <td><img :src="dogImage" alt="failed to get DOTD"></td>
+          <td><img :src="dogImage[dog.dog_id]" alt="failed to get DOTD"></td>
         </tr>
       </tbody>
     </table>
@@ -59,7 +59,7 @@
       setup() {
         const dogs = ref([]);
         const error = ref('');
-        var dogImage = ref('');
+        var dogImage = ref([]);
 
         async function loadDogs() {
           try {
@@ -75,7 +75,7 @@
           try {
               const res = await fetch('https://dog.ceo/api/breeds/image/random');
               const data = await res.json();
-              dogImage.value = data.message;
+              dogImage.value += data.message;
           } catch (err) {
               alert("failed to get DOTD");
           }

@@ -128,7 +128,9 @@
 
         async function loadDogs() {
             try {
-              const response = await fetch('/api/udrtd');
+              const response = await fetch('/api/users', {
+                
+              });
               const rows = await response.json();
 
               for (const dog of rows) {

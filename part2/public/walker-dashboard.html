@@ -48,7 +48,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = getCurrentUser();
+        const user = ref();
 
         async function loadWalkRequests() {
           try {

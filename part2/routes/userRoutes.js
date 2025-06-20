@@ -39,32 +39,7 @@ router.get('/me', (req, res) => {
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
-  var name = req.body.username;
-  var pass = req.body.password;
-
-  try {
-    const [rows] = await db.query(
-      "SELECT * FROM Users WHERE username = ? AND password = ?",
-      [name, pass]
-    );
-
-    if (rows.length !== 0) {
-      const user = rows[0];
-      req.session.user = {
-        user_id: user.user_id,
-        username: user.username,
-        role: user.role
-      };
-      res.redirect('/public/owner-dashboard.html');
-    } else {
-        res.status(401).json({ message: 'Invalid credentials'});
-    }
-  } catch (err) {
-    res.status(500).json({ message: 'Login Error'});
-  }
-});
-
-  /* const { email, password } = req.body;
+ const { email, password } = req.body;
 
   try {
     const [rows] = await db.query(`
@@ -79,7 +54,8 @@ router.post('/login', async (req, res) => {
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
-  } */
+  }
+});
 
 
 module.exports = router;

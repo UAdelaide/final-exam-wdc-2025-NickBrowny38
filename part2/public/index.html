@@ -55,12 +55,13 @@
       setup() {
         const dogs = ref([]);
         const error = ref('');
-              data() {
-        return {
-          dogImage: '',
-          message: 'Welcome to the Dog Walking Service!'
-        };
-      },
+
+        data() {
+          return {
+            dogImage: '',
+            message: 'Welcome to the Dog Walking Service!'
+          };
+        }
 
         async function loadDogs() {
           try {

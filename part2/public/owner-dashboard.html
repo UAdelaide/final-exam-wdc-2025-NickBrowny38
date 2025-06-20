@@ -125,7 +125,11 @@
         }
 
         async function loadDogs() {
-          
+            try {
+              const [rows] = await db.query(
+                "SELECT * FROM Users WHERE username = ? AND password_hash = ?",
+                [name, pass]
+              );
           var new_dog = document.createElement('option');
           new_dog.value =
         }

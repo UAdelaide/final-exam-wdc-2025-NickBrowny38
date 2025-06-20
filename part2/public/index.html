@@ -46,7 +46,7 @@
           <td>{{ dog.name }}</td>
           <td>{{ dog.size }}</td>
           <td>{{ dog.owner_id }}</td>
-          <td><img :src="dogImage[dog.dog_id]" alt="failed to get DOTD"></td>
+          <td><img :src="dogImage[dog.dog_id]" alt="Dog Image"></td>
         </tr>
       </tbody>
     </table>
@@ -80,13 +80,12 @@
 
         onMounted(() => {
           loadDogs();
-          getDog();
         });
 
         return {
           dogs,
           error,
-          dogImage,
+          dogImages,
           message: 'Welcome to the Dog Walking Service!'
         };
       }

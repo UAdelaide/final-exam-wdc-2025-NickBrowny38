@@ -65,7 +65,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ message: 'Invalid role'});
     }
   } catch (err) {
-    return res.status(401).json({ message: 'Invalid credentials'});
+    res.status(500).json({ message: 'Login Error'});
   }
 
   if (req.body.user_id in Users){

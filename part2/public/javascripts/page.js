@@ -2,7 +2,8 @@ var posts = [];
 var search = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.get
+    const form = document.getElementById("login-form");
+    
 });
 
 /*

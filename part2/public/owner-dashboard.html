@@ -133,8 +133,9 @@
               });
 
               if (!res.ok){
-                throw new Error('Failed to fetch dogs:')
+                throw new Error('Failed to fetch dogs:' + res.statusText);
               }
+
               const rows = await res.json();
 
               for (const dog of rows) {

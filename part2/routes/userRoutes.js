@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
+const e = require('express');
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
@@ -46,7 +47,7 @@ router.post('/login', async (req, res) => {
       [username, password]
     );
 
-    if (rows.length === 0) {
+    if (rows.length !== 0) {
       return res.status(401).json({ message: 'Invalid credentials'});
     }
 

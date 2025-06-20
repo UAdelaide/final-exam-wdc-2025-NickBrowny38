@@ -109,7 +109,7 @@ app.get('/api/dogs', async (req, res) => {
     }
 });
 
-// Route to return Dogs
+// Route to return open walk requests
 app.get('/api/dogs', async (req, res) => {
     try {
         const [rows] = await db.query('SELECT * FROM Dogs');

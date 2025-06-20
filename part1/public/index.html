@@ -41,7 +41,7 @@
                 return {
                     dogImage: '',
                     dogInfo: ["alex", "owner is: Dr. Brown", "medium"],
-                    index=
+                    index: 0
                 };
             },
             methods: {
@@ -54,6 +54,7 @@
                         alert("failed to get DOTD");
                     }
                 }
+                
             },
             mounted() {
                 this.getDog();

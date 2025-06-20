@@ -84,6 +84,8 @@ async function insertTestData() {
             'Eba Anchorage',
             'completed');
         `);
+
+        
     }
 }
 

@@ -119,10 +119,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
     try {
         const [rows] = await db.query(`
             SELECT wr.request_id,
-            (SELECT name FROM Dogs WHERE dog_id = dog_id),
-            requested_time,
-            duration_minutes,
-            location,
+            d.name AS dog_name,
+            wr.requested_time,
+            wr.duration_minutes,
+            wr.location,
             (SELECT username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id)
             FROM WalkRequests WHERE status = 'open'
             `);

@@ -100,6 +100,7 @@ async function insertTestData() {
 }
 
 // Route to return Dogs
+app.get()
 
 
 module.exports = app;

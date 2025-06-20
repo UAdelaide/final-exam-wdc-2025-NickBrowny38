@@ -81,7 +81,17 @@
           message: 'Welcome to the Dog Walking Service!'
         };
       },
-      
+      methods: {
+                async getDog() {
+                    try {
+                        const res = await fetch('https://dog.ceo/api/breeds/image/random');
+                        const data = await res.json();
+                        this.dogImage = data.message;
+                    } catch (err) {
+                        alert("failed to get DOTD");
+                    }
+                },
+      }
     }).mount('#app');
   </script>
 

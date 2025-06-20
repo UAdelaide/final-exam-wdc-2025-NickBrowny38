@@ -142,7 +142,7 @@ app.get('/api/walkers/summary', async (req, res) => {
             SELECT u.username AS walker_username,
             COUNT(DISTINCT wrate.rating_id) AS num_ratings,
             AVG(wrate.rating AS avg_ratings),
-            COUNT(DISTINCT wapp.
+            COUNT(DISTINCT wapp.walker_id) AS
 
         `);
         res.json(rows);

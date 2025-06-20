@@ -17,7 +17,9 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 app.use(
-    session
+    session({
+        
+    })
 )
 
 // Export the app instead of listening here

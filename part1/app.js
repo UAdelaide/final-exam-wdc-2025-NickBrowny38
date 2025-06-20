@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-async function insertTestData() {
+(async () => {
     try {
         const connection = await db.createConnection();
 
@@ -97,7 +97,7 @@ async function insertTestData() {
     } catch (err) {
         console.error('Error setting up database', err);
     }
-}
+})();
 
 // Route to return Dogs
 app.get('/api/dogs', async (req, res) => {

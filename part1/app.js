@@ -100,7 +100,9 @@ async function insertTestData() {
 }
 
 // Route to return Dogs
-app.get('/api/dogs', a)
+app.get('/api/dogs', async (req, res) => {
+    try
+})
 
 
 module.exports = app;

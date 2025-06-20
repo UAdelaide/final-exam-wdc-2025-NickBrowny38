@@ -55,6 +55,12 @@
       setup() {
         const dogs = ref([]);
         const error = ref('');
+              data() {
+        return {
+          dogImage: '',
+          message: 'Welcome to the Dog Walking Service!'
+        };
+      },
 
         async function loadDogs() {
           try {
@@ -84,15 +90,6 @@
           dogs,
           error
         };
-      },
-      data() {
-        return {
-          dogImage: '',
-          message: 'Welcome to the Dog Walking Service!'
-        };
-      },
-      methods: {
-
       }
     }).mount('#app');
   </script>

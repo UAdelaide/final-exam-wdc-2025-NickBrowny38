@@ -119,8 +119,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
     }
 });
 
-// Route to return open walk requests
-app.get('/api/walkrequests/open', async (req, res) => {
+// Route to return walkers summary
+app.get('/api/walkers/summary', async (req, res) => {
     try {
         const [rows] = await db.query("SELECT * FROM WalkRequests WHERE status = 'open'");
         res.json(rows);

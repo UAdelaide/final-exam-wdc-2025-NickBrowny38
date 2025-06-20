@@ -45,6 +45,10 @@ router.post('/login', async (req, res) => {
       "SELECT * FROM Users WHERE username = ? AND password = ?",
       [username, password]
     );
+
+    if (rows.length === 0) {
+      return
+    }
   }
 
   if (req.body.user_id in Users){

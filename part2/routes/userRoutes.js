@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
 
     try {
       const connection = await db.getConnection();
-      const ok = await db.query("SELECT * FROM ")
+      const ok = await db.query("SELECT user_id FROM Users WHERE ")
     }
 
     if(){

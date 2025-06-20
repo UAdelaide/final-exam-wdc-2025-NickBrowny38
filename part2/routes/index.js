@@ -7,7 +7,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+// Login route
 router.post('/login', async (req, res) => {
+  // Get details
   var name = req.body.username;
   var pass = req.body.password;
 

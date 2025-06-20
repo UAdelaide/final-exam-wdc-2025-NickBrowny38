@@ -2,7 +2,7 @@ var posts = [];
 var search = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+    const form = document.
 });
 
 /*

@@ -31,7 +31,7 @@
         <img :src="dogImage" alt="failed to get DOTD">
 
         <button type="button" id="dotd-btn">see next info!</button>
-        <p id="info"></p>
+        <p id="info">{{ </p>
     </div>
 
     <script>
@@ -43,9 +43,6 @@
                     dogInfo: ["alex", "owner is: Dr. Brown", "medium"],
                     infoCount: 0
                 };
-            },
-            el: {
-
             },
             methods: {
                 async getDog() {

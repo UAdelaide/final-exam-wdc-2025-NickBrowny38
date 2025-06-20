@@ -84,7 +84,9 @@ async function insertTestData() {
             'Eba Anchorage',
             'completed');
         `);
-    } catch (err)
+    } catch (err) {
+        console.error('Error setting up database');
+    }
 }
 
 

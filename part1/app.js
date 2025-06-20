@@ -33,15 +33,25 @@ async function insertTestData() {
             ('kim123', 'kim@example.com', 'hashed999', 'owner');
         `);
 
-        // Insert test users
+        // Insert test dogs
         await connection.query(`
-            INSERT INTO Users (username, email, password_hash, role)
+            INSERT INTO Dogs (owner_id, name, size)
             VALUES
-            ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-            ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-            ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-            ('angelawalker', 'angela@example.com', 'hashed000', 'walker'),
-            ('kim123', 'kim@example.com', 'hashed999', 'owner');
+            ((SELECT user_id FROM Users WHERE username = 'alice123'),
+            'Max',
+            'medium'),
+            ((SELECT user_id FROM Users WHERE username = 'carol123'),
+            'Bella',
+            'small'),
+            ((SELECT user_id FROM Users WHERE username = 'kim123'),
+            'Benny',
+            'large'),
+            ((SELECT user_id FROM Users WHERE username = 'alice123'),
+            'Lilly',
+            'small'),
+            ((SELECT user_id FROM Users WHERE username = 'carol123'),
+            'Archie',
+            'medium');
         `);
     }
 }

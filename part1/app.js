@@ -24,18 +24,20 @@ async function insertTestData() {
 
         const [user_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
         if (user_rows[0].count === 0) {
+            // Insert test users
+            await connection.query(`
+                INSERT INTO Users (username, email, password_hash, role)
+                VALUES
+                ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+                ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+                ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+                ('angelawalker', 'angela@example.com', 'hashed000', 'walker'),
+                ('kim123', 'kim@example.com', 'hashed999', 'owner');
+            `);
+        }
 
-        // Insert test users
-        await connection.query(`
-            INSERT INTO Users (username, email, password_hash, role)
-            VALUES
-            ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-            ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-            ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-            ('angelawalker', 'angela@example.com', 'hashed000', 'walker'),
-            ('kim123', 'kim@example.com', 'hashed999', 'owner');
-        `);
 
+        
         // Insert test dogs
         await connection.query(`
             INSERT INTO Dogs (owner_id, name, size)

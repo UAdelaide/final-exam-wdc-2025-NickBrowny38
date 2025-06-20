@@ -63,36 +63,37 @@ async function insertTestData() {
 
         const [walk_req_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
         if (walk_req_rows[0].count === 0) {
-        // Insert test walk requests
-        await connection.query(`
-            INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-            VALUES
-            ((SELECT dog_id FROM Dogs WHERE name = 'Max'),
-            '2025-06-10 08:00:00',
-            30,
-            'Parklands',
-            'open'),
-            ((SELECT dog_id FROM Dogs WHERE name = 'Bella'),
-            '2025-06-10 09:30:00',
-            45,
-            'Beachside Ave',
-            'accepted'),
-            ((SELECT dog_id FROM Dogs WHERE name = 'Benny'),
-            '2025-06-11 13:30:00',
-            25,
-            'Port Augusta',
-            'cancelled'),
-            ((SELECT dog_id FROM Dogs WHERE name = 'Lilly'),
-            '2025-06-11 07:00:00',
-            30,
-            'Botanic Gardens',
-            'open'),
-            ((SELECT dog_id FROM Dogs WHERE name = 'Archie'),
-            '2025-06-11 11:15:00',
-            60,
-            'Eba Anchorage',
-            'completed');
-        `);
+            // Insert test walk requests
+            await connection.query(`
+                INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+                VALUES
+                ((SELECT dog_id FROM Dogs WHERE name = 'Max'),
+                '2025-06-10 08:00:00',
+                30,
+                'Parklands',
+                'open'),
+                ((SELECT dog_id FROM Dogs WHERE name = 'Bella'),
+                '2025-06-10 09:30:00',
+                45,
+                'Beachside Ave',
+                'accepted'),
+                ((SELECT dog_id FROM Dogs WHERE name = 'Benny'),
+                '2025-06-11 13:30:00',
+                25,
+                'Port Augusta',
+                'cancelled'),
+                ((SELECT dog_id FROM Dogs WHERE name = 'Lilly'),
+                '2025-06-11 07:00:00',
+                30,
+                'Botanic Gardens',
+                'open'),
+                ((SELECT dog_id FROM Dogs WHERE name = 'Archie'),
+                '2025-06-11 11:15:00',
+                60,
+                'Eba Anchorage',
+                'completed');
+            `);
+        }
     } catch (err) {
         console.error('Error setting up database', err);
     }

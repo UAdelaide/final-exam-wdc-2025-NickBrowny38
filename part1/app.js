@@ -20,11 +20,7 @@ app.use('/users', usersRouter);
 
 async function insertTestData() {
     try {
-        const connection = await db.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: '' // Set your MySQL root password
-        });
+        const connection = await db.createConnection();
     }
 }
 

@@ -91,14 +91,15 @@
         }
 
         onMounted(() => {
-          loadWalkRequests();
           getCurrentUser();
+          loadWalkRequests();
         });
 
         return {
           walks,
           message,
           error,
+          user,
           applyToWalk
         };
       }

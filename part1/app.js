@@ -139,10 +139,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
     try {
         const [rows] = await db.query(`
-            SELECT u.username AS walker_username,
+            SELECT username,
             COUNT(DISTINCT wrate.rating_id) AS num_ratings,
             AVG(wrate.rating AS avg_ratings),
-            COUNT(DISTINCT wapp.walker_id) AS 
+            COUNT(DISTINCT wapp.walker_id) AS
 
         `);
         res.json(rows);

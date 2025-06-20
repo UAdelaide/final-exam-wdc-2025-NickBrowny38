@@ -127,8 +127,7 @@
         async function loadDogs() {
             try {
               const [rows] = await db.query(
-                "SELECT name FROM Dogs WHERE owner_id = ",
-                [name, pass]
+                "SELECT name FROM Dogs WHERE owner_id = user_id",
               );
               var new_dog = document.createElement('option');
               new_dog.value =

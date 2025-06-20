@@ -6,7 +6,7 @@ const session = require('express-session');
 
 const app = express();
 
-app.use(logger('dev'))
+app.use(logger('dev'));
 
 // Middleware
 app.use(express.json());

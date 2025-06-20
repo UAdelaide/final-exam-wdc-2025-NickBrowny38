@@ -19,7 +19,7 @@ app.use('/api/users', userRoutes);
 
 app.use(
     session({
-        secret: sessionSecret,
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: {

@@ -40,12 +40,14 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
+  try {
+    const connection = await db.getConnection();
+    const ok = await db.query("SELECT * FROM Users WHERE username = ? AND password = ?")
+  }
+
   if (req.body.user_id in Users){
 
-    try {
-      const connection = await db.getConnection();
-      const ok = await db.query("SELECT * FROM Users WHERE username = ? AND password = ?")
-    }
+
 
     if(){
       req.session.user_id = req.body.user_id;

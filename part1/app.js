@@ -141,7 +141,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         const [rows] = await db.query(`
             SELECT u.username AS walker_username,
             COUNT(DISTINCT wrate.rating_id) AS num_ratings,
-            AVG(wrate.rating AS) avg_ratings,
+            AVG(wrate.rating) AS avg_ratings,
             COUNT(DISTINCT wapp.walker_id) WHERE wapp.status = 'completed' AS num_walks,
             FROM Users u
             LEFT JOIN WalkApplications wapp ON u.user_id = wapp.walker_id

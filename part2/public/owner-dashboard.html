@@ -129,7 +129,8 @@
         async function loadDogs() {
             try {
               const res = await fetch('/api/users', {
-                
+                method: 'GET',
+                credentials: 'include'
               });
               const rows = await res.json();
 

@@ -19,6 +19,7 @@ router.post('/login', async (req, res) => {
       [name, pass]
     );
 
+    // Check if login details are valid
     if (rows.length !== 0) {
       const user = rows[0];
       req.session.user = {
@@ -26,6 +27,8 @@ router.post('/login', async (req, res) => {
         username: user.username,
         role: user.role
       };
+
+      //Redirect
       if (user.role === 'owner') {
         res.redirect('/owner-dashboard.html');
       } else if (user.role === 'walker') {

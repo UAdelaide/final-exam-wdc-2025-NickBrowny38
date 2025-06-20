@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
 
     try {
       const connection = await db.getConnection();
-      const 
+      const ok = await db.query('')
     }
 
     if(){

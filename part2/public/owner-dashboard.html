@@ -134,7 +134,7 @@
               const rows = await res.json();
 
               for (const dog of rows) {
-                const new_dog = document.createElement('option');
+                var new_dog = document.createElement('option');
                 new_dog.value = dog.name;
                 new_dog.textContent = dog.name;
                 this.dropdown.appendChild(new_dog);

@@ -59,7 +59,7 @@
       setup() {
         const dogs = ref([]);
         const error = ref('');
-        const dogImage = ref([]);
+        const dogImages = ref([]);
 
         async function loadDogs() {
           try {
@@ -83,7 +83,7 @@
           try {
               const res = await fetch('https://dog.ceo/api/breeds/image/random');
               const data = await res.json();
-              dogImage.value += data.message;
+              dogImages.value += data.message;
           } catch (err) {
               alert("failed to get DOTD");
           }

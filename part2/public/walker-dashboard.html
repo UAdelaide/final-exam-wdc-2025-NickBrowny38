@@ -84,7 +84,8 @@
             const res = await fetch('api/user/me');
             return res;
           } catch (err) {
-            
+            error.value = err.message;
+            message.value = '';
           }
         }
 

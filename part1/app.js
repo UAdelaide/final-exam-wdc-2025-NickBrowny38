@@ -37,28 +37,32 @@ async function insertTestData() {
         }
 
 
-        
-        // Insert test dogs
-        await connection.query(`
-            INSERT INTO Dogs (owner_id, name, size)
-            VALUES
-            ((SELECT user_id FROM Users WHERE username = 'alice123'),
-            'Max',
-            'medium'),
-            ((SELECT user_id FROM Users WHERE username = 'carol123'),
-            'Bella',
-            'small'),
-            ((SELECT user_id FROM Users WHERE username = 'kim123'),
-            'Benny',
-            'large'),
-            ((SELECT user_id FROM Users WHERE username = 'alice123'),
-            'Lilly',
-            'small'),
-            ((SELECT user_id FROM Users WHERE username = 'carol123'),
-            'Archie',
-            'medium');
-        `);
+        const [dog_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
+        if (dog_rows[0].count === 0) {
+            // Insert test dogs
+            await connection.query(`
+                INSERT INTO Dogs (owner_id, name, size)
+                VALUES
+                ((SELECT user_id FROM Users WHERE username = 'alice123'),
+                'Max',
+                'medium'),
+                ((SELECT user_id FROM Users WHERE username = 'carol123'),
+                'Bella',
+                'small'),
+                ((SELECT user_id FROM Users WHERE username = 'kim123'),
+                'Benny',
+                'large'),
+                ((SELECT user_id FROM Users WHERE username = 'alice123'),
+                'Lilly',
+                'small'),
+                ((SELECT user_id FROM Users WHERE username = 'carol123'),
+                'Archie',
+                'medium');
+            `);
+        }
 
+                const [user_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
+        if (user_rows[0].count === 0) {
         // Insert test walk requests
         await connection.query(`
             INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)

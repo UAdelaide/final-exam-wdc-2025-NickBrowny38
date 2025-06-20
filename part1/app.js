@@ -120,7 +120,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
         const [rows] = await db.query(`
             SELECT request_id,
             (SELECT name FROM Dogs WHERE dog_id = dog_id),
-            request_time,
+            requested_time,
             duration_minutes,
             location,
             (SELECT username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id)

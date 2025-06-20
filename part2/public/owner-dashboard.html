@@ -130,9 +130,9 @@
                 "SELECT name FROM Dogs WHERE owner_id = user_id"
               );
 
-              for (var dog in rows) {
+              for (var dog_name in rows) {
                 var new_dog = document.createElement('option');
-                new_dog.value =
+                new_dog.value = dog_name;
               }
             }
         }

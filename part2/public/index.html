@@ -28,29 +28,30 @@
         <button type="submit" class="btn">Log In</button>
       </form>
     </div>
+
+    <h2>All Registered Dogs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Dog ID</th>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Owner ID</th>
+          <th>Photo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="dog in dogs" :key="dog.dog_id">
+          <td>{{ dog.dog_id }}</td>
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.size }}</td>
+          <td>{{ dog.owner_id }}</td>
+          <td><img :src="dogImage" alt="failed to get DOTD"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <h2>All Registered Dogs</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Dog ID</th>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Owner ID</th>
-        <th>Photo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="dog in dogs" :key="dog.dog_id">
-        <td>{{ dog.dog_id }}</td>
-        <td>{{ dog.name }}</td>
-        <td>{{ dog.size }}</td>
-        <td>{{ dog.owner_id }}</td>
-        <td><img :src="dogImage" alt="failed to get DOTD"></td>
-      </tr>
-    </tbody>
-  </table>
 
   <script>
     const { createApp, ref, onMounted } = Vue;

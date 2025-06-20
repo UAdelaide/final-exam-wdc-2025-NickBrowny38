@@ -73,19 +73,8 @@
               const imageData = await imageRes.json();
               dogImages.value[dog.dog_id] = imageData.message;
             }
-
           } catch (err) {
               error.value = err.message;
-          }
-        }
-
-        async function getDog() {
-          try {
-              const res = await fetch('https://dog.ceo/api/breeds/image/random');
-              const data = await res.json();
-              dogImages.value += data.message;
-          } catch (err) {
-              alert("failed to get DOTD");
           }
         }
 

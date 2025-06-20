@@ -22,6 +22,9 @@ async function insertTestData() {
     try {
         const connection = await db.createConnection();
 
+        const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
+        if (rows[0].count === 0) {
+
         // Insert test users
         await connection.query(`
             INSERT INTO Users (username, email, password_hash, role)

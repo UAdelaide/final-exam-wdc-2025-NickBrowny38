@@ -4,7 +4,7 @@ const db = mysql.createPool({
   host: 'localhost',
   user: 'db_user',
   password: 'pass123',
-  database: process.env.DB_NAME, // "dinesmart"
+  database: 'dogwalks_db';
   waitForConnections: true,
   connectionLimit: 10
 });

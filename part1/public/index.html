@@ -11,7 +11,14 @@
     <img src="dogimage" alt="failed to get DOTD">
 
     <script>
-        const { create}
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    dogImage: ''
+                }
+            }
+        })
     </script>
 </body>
 </html>

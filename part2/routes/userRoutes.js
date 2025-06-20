@@ -65,6 +65,8 @@ router.get('/dogs', async (req, res) => {
       SELECT name FROM Dogs WHERE owner_id = ${uid}
     `);
 
+  } catch (error) {
+    res.status(500)
   }
 });
 

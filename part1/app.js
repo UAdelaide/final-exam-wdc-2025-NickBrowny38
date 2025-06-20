@@ -53,6 +53,11 @@ async function insertTestData() {
             'Archie',
             'medium');
         `);
+
+        // Insert test walk requests
+        await connection.query(`
+
+        `);
     }
 }
 

@@ -81,11 +81,11 @@
 
         async function getCurrentUser() {
           try {
-            const res = await fetch('/api/user/me');
-            return res.user_id;
+            const res = await fetch('/api/users/me');
+            if (!res.ok) throw new Error('Failed to load user');
+            user.value = await res.json();
           } catch (err) {
             error.value = err.message;
-            message.value = '';
           }
         }
 

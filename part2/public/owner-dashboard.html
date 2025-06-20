@@ -136,15 +136,7 @@
               const res = await fetch('/api/users/dogs', {
                 credentials: 'include'
               });
-
-              if (!res.ok)
-
-              for (const dog of rows) {
-                var new_dog = document.createElement('option');
-                new_dog.value = dog.name;
-                new_dog.textContent = dog.name;
-                this.dropdown.appendChild(new_dog);
-              }
+              dogs.value = await res.json();
             } catch (err) {
               console.error('Finding dogs failed:',err);
             }

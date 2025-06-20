@@ -136,13 +136,14 @@
                 dropdown.appendChild(new_dog);
               }
             } catch (err) {
-    console.error('Login failed:',err);
-    res.status(500).json({ message: 'Login Error' });
+              console.error('Finding dogs failed:',err);
+              res.status(500).json({ message: 'No dogs found' });
             }
         }
 
         onMounted(() => {
           loadWalks();
+          loadDogs();
         });
 
         return {

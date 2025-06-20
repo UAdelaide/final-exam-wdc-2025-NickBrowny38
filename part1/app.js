@@ -102,7 +102,7 @@ async function insertTestData() {
 // Route to return Dogs
 app.get('/api/dogs', async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT * FROM Dogs');
+        const [rows] = await db.query('SELECT name, size,  FROM Dogs');
         res.json(rows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch dogs'});

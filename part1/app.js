@@ -20,8 +20,7 @@ app.use('/users', usersRouter);
 
 async function insertTestData() {
     try {
-        // Connect to MySQL without specifying a database
-        const connection = await mysql.createConnection({
+        const connection = await db.createConnection({
             host: 'localhost',
             user: 'root',
             password: '' // Set your MySQL root password

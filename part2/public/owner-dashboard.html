@@ -128,10 +128,10 @@
 
         async function loadDogs() {
             try {
-              const response = await fetch('/api/users', {
+              const res = await fetch('/api/users', {
                 
               });
-              const rows = await response.json();
+              const rows = await res.json();
 
               for (const dog of rows) {
                 const new_dog = document.createElement('option');

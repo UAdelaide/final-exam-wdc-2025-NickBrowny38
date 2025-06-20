@@ -102,7 +102,7 @@ async function insertTestData() {
 // Route to return Dogs
 app.get('/api/dogs', async (req, res) => {
     try {
-        const [] = await
+        const [rows] = await db.query('SELECT * FROM Dogs')
     }
 })
 

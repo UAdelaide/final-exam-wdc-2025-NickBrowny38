@@ -39,9 +39,9 @@ router.get('/me', (req, res) => {
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
 
-  if (req.body.user in Users){
+  if (req.body.user_id in Users){
     if(ok){
-      req.session.username = req.body.username;
+      req.session.user_id = req.body.user_id;
       res.send(req.session.)
     }
   }

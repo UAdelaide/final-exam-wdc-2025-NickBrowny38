@@ -61,6 +61,8 @@ router.post('/login', async (req, res) => {
       res.redirect('/owner-dashboard.html')
     } else if (user.role === 'walker') {
       res.redirect('/walker-dashboard.html');
+    } else {
+      return res.status(401).json({ message: 'Invalid role'});
     }
   }
 

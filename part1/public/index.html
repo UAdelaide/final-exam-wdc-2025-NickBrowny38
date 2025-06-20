@@ -17,7 +17,7 @@
         createApp({
             data() {
                 return {
-                    dogImage: getDog().message
+                    dogImage: ''
                 };
             },
             methods: {
@@ -31,7 +31,10 @@
                     }
                 }
             },
-        })
+            mounted() {
+                this.getDog();
+            }
+        }).mount('#dotd-div');
     </script>
 </body>
 </html>

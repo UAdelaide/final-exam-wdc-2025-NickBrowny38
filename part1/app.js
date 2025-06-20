@@ -124,9 +124,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
             duration_minutes,
             location,
             (SELECT sub.username
-                FROM (SELECT username FROM Users WHERE user_id = owner_id)
+                FROM (
+                SELECT username FROM Users WHERE user_id = owner_id
+                ) sub
 
-            WHERE user_id = owner_id)
             FROM WalkRequests WHERE status = 'open'
             `);
         res.json(rows);

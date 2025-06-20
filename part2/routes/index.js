@@ -24,7 +24,13 @@ router.post('/login', async (req, res) => {
         username: user.username,
         role: user.role
       };
-      res.redirect('/owner-dashboard.html');
+      if (user.role === 'owner') {
+        res.redirect('/owner-dashboard.html');
+      } else if (user.role === 'walker') {
+        res.redirect('/walker-dashboard.html');
+      } else {
+        res.status(403).json({ message: 'Invalid user role' });
+      }
     } else {
         res.status(401).json({ message: 'Invalid credentials'});
     }

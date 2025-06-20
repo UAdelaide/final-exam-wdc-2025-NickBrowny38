@@ -125,7 +125,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
             location,
             (SELECT sub.username
                 FROM (
-                    SELECT * FROM Users WHERE user_id = owner_id
+                    SELECT *
+                        FROM Users WHERE user_id = owner_id
                 ) sub
 
             FROM WalkRequests WHERE status = 'open'

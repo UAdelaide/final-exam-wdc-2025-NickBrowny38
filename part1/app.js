@@ -139,8 +139,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
     try {
         const [rows] = await db.query(`
-            SELECT username,
-            COUNT(wr.request_id) AS num_walks,
+            SELECT u.username AS walker_username,
+            COUNT(DISTINCT wr.request_id) AS num_walks,
             FROM WalkRequests WHERE status = 'open'
 
         `);

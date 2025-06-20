@@ -37,7 +37,7 @@ async function insertTestData() {
         }
 
 
-        const [dog_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
+        const [dog_rows] = await db.query('SELECT COUNT(*) AS count FROM Dogs');
         if (dog_rows[0].count === 0) {
             // Insert test dogs
             await connection.query(`
@@ -61,7 +61,7 @@ async function insertTestData() {
             `);
         }
 
-        const [walk_req_rows] = await db.query('SELECT COUNT(*) AS count FROM Users');
+        const [walk_req_rows] = await db.query('SELECT COUNT(*) AS count FROM WalkRequests');
         if (walk_req_rows[0].count === 0) {
             // Insert test walk requests
             await connection.query(`

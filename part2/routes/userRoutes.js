@@ -42,7 +42,8 @@ router.post('/login', async (req, res) => {
   if (req.body.user_id in Users){
 
     try {
-      const connection = await db.getConnection
+      const connection = await db.getConnection();
+      const 
     }
 
     if(){

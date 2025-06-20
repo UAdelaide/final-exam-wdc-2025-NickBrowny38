@@ -65,17 +65,14 @@
               error.value = err.message;
           }
         }
-
-        onMounted(() => {
-          loadDogs();
-        });
-        
       },
       data() {
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
       }
+
+
     }).mount('#app');
   </script>
 

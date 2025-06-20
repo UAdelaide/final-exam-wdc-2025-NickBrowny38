@@ -119,7 +119,11 @@ app.get('/api/walkrequests/open', async (req, res) => {
     try {
         const [rows] = await db.query(`
             SELECT request_id,
-            (SELECT name FROM Dogs WHERE dog_id = dog_id)
+            (SELECT name FROM Dogs WHERE dog_id = dog_id),
+            request_time,
+            duration_minutes,
+            location,
+            
             FROM WalkRequests WHERE status = 'open'
             `);
         res.json(rows);

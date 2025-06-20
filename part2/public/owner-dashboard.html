@@ -128,9 +128,8 @@
 
         async function loadDogs() {
             try {
-              const [rows] = await db.query(
-                "SELECT name FROM Dogs WHERE owner_id = user_id"
-              );
+              const response = await fetch('/api/dogs');
+              const rows = await response.json();
 
               for (var dog_name in rows) {
                 var new_dog = document.createElement('option');

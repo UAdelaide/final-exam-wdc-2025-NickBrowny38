@@ -42,8 +42,10 @@ router.post('/login', async (req, res) => {
   if (req.body.user_id in Users){
     if(ok){
       req.session.user_id = req.body.user_id;
-      res.send(req.session.)
-    }
+      res.send(req.session.user_id);
+    } else {
+      res.sendStatus(401);
+    } else {}
   }
 });
 

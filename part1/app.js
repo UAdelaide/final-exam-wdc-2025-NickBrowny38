@@ -126,8 +126,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
             u.username AS owner_username
             FROM WalkRequests wr
             INNER JOIN Dogs d ON wr.dog_id = d.dog_id
-            INNER JOIN 
-            WHERE status = 'open'
+            INNER JOIN Users u ON d.owner_id = u.user_id
+            WHERE wr.status = 'open'
             `);
         res.json(rows);
     } catch (err) {

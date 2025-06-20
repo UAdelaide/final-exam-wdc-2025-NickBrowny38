@@ -67,6 +67,13 @@
             if (!res.ok) throw new Error('Failed to fetch dogs');
             const dogList = await res.json();
             dogs.value = dogList;
+
+            for (const dog of dogList) {
+              const imageRes = await fetch('https://dog.ceo/api/breeds/image/random');
+              const imageData = await imageRes.json();
+              dogImages.value[dog.dog_id] = imageData.message;
+            }
+
           } catch (err) {
               error.value = err.message;
           }

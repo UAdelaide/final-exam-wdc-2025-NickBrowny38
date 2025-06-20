@@ -67,20 +67,6 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: 'Login Error'});
   }
-
-  if (req.body.user_id in Users){
-
-
-
-    if(){
-      req.session.user_id = req.body.user_id;
-      res.send(req.session.user_id);
-    } else {
-      res.sendStatus(401);
-    }
-  } else {
-    res.sendStatus(401);
-  }
 });
 
   /* const { email, password } = req.body;

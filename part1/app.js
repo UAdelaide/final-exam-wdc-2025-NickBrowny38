@@ -123,7 +123,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
             wr.requested_time,
             wr.duration_minutes,
             wr.location,
-            (SELECT username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id)
+            u.username AS owner_username
             FROM WalkRequests WHERE status = 'open'
             `);
         res.json(rows);

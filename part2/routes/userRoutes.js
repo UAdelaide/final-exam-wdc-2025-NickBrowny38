@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
     };
 
     if (user.role === 'owner'){
-      res.redirect('/owner-dashboard.html')
+      res.redirect('/owner-dashboard.html');
     } else if (user.role === 'walker') {
       res.redirect('/walker-dashboard.html');
     } else {

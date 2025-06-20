@@ -1,9 +1,10 @@
+/* eslint-disable linebreak-style */
 var posts = [];
 var search = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("login-form");
-    
+    form.addEventListener
 });
 
 /*

@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
         username: user.username,
         role: user.role
       };
-      res.redirect('');
+      res.redirect('/public/owner-dashboard.html');
     } else {
         res.status(401).json({ message: 'Invalid credentials'});
     }

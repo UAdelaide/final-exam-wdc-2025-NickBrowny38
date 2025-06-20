@@ -59,6 +59,9 @@ router.post('/login', async (req, res) => {
 
 router.get('/dogs', async (req, res) => {
   const user = req.session.user;
+  if (!user || user.role !== 'owner') {
+    return res.status(403).json({ error: 'Access denied' });
+  }
 
   try {
     const [rows] = await db.query(

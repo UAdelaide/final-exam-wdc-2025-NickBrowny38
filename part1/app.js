@@ -140,7 +140,7 @@ app.get('/api/walkers/summary', async (req, res) => {
     try {
         const [rows] = await db.query(`
             SELECT u.username AS walker_username,
-            COUNT(DISTINCT wr.request_id) AS num_walks,
+            COUNT(DISTINCT wrate.rating_id) AS num_ratings,
             FROM WalkRequests WHERE status = 'open'
 
         `);

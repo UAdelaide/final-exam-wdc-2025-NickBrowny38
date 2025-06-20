@@ -123,8 +123,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
             request_time,
             duration_minutes,
             location,
-            (SELECT sub.username FROM
-                INNER JOIN 
+            (SELECT username FROM
 
 
             FROM WalkRequests WHERE status = 'open'

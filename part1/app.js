@@ -22,7 +22,7 @@ async function insertTestData() {
     try {
         const connection = await db.createConnection();
 
-        const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
+        const [rows] = await db.query('SELECT COUNT(*) AS count FROM books');
         if (rows[0].count === 0) {
 
         // Insert test users

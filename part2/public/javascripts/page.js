@@ -5,7 +5,10 @@ var search = null;
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("login-form");
     form.addEventListener('submit', async function(e) {
-        
+        const res = await fetch(form.ariaDescription, {
+           method: 'POST',
+           
+        });
     });
 });
 

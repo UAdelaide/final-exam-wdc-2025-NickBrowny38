@@ -81,7 +81,6 @@
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/user/me');
-            if (!res.ok) throw new Error(result.error || 'Application failed');
             return res.user_id;
           } catch (err) {
             error.value = err.message;

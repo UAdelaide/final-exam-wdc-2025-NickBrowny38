@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config();
 const session = require('express-session');
 const app = express();
-const db = require('./db');
+const db = require('./models/db');
 
 //app.use(logger('dev'));
 

@@ -57,9 +57,10 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// 
+// Route to get dogs from database
 router.get('/dogs', async (req, res) => {
   const user = req.session.user;
+  //
   if (!user || user.role !== 'owner') {
     return res.status(403).json({ error: 'Access denied' });
   }

@@ -10,6 +10,9 @@
 <body class="bg-light">
   <div id="app" class="container py-4">
     <h1 class="mb-4 text-primary">Owner Dashboard</h1>
+    <form id="logout-form" action="/logout" method="post">
+      <button type="submit" class="btn btn-outline-danger">Log Out</button>
+    </form>
 
     <!-- Walk request form -->
     <div class="card mb-4">
@@ -71,11 +74,6 @@
     </div>
     <p v-else>No walk requests yet.</p>
   </div>
-
-  <br>
-  <form id="logout-form" action="/logout" method="post">
-    <button type="submit" class="btn btn-outline-danger">Log Out</button>
-  </form>
 
   <script>
     const { createApp, ref, onMounted } = Vue;

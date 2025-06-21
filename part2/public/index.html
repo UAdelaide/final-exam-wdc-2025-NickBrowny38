@@ -73,6 +73,7 @@
         // Load dogs into table
         async function loadDogs() {
           try {
+            // Get list of dogs from 
             const res = await fetch('/api/dogs');
             if (!res.ok) throw new Error('Failed to fetch dogs');
             const dogList = await res.json();

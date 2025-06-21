@@ -73,12 +73,13 @@
         // Load dogs into table
         async function loadDogs() {
           try {
-            // Get list of dogs from 
+            // Get list of dogs from database
             const res = await fetch('/api/dogs');
             if (!res.ok) throw new Error('Failed to fetch dogs');
             const dogList = await res.json();
             dogs.value = dogList;
 
+            // Generate a random image for each dog using dog.ceo api
             for (const dog of dogList) {
               const imageRes = await fetch('https://dog.ceo/api/breeds/image/random');
               const imageData = await imageRes.json();

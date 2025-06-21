@@ -70,6 +70,7 @@
         const error = ref('');
         const dogImages = ref({});
 
+        // Load dogs into table
         async function loadDogs() {
           try {
             const res = await fetch('/api/dogs');
